@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ANAND CATERERS & DECORATORS</title>
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Arial;
+background:#fffaf4;
+}
+
+/* INTRO */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:introFade 3s forwards;
+}
+
+@keyframes introFade{
+0%{opacity:1;}
+80%{opacity:1;}
+100%{opacity:0;visibility:hidden;}
+}
+
+/* NAVBAR */
+
+nav{
+background:#222;
+padding:12px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* HANGING LOGO */
+
+.logo{
+text-align:center;
+margin:20px;
+animation:swing 4s infinite;
+transform-origin:top center;
+}
+
+.logo h1{
+font-family:Georgia;
+color:#b22222;
+}
+
+@keyframes swing{
+0%{transform:rotate(0);}
+25%{transform:rotate(5deg);}
+50%{transform:rotate(0);}
+75%{transform:rotate(-5deg);}
+100%{transform:rotate(0);}
+}
+
+section{
+padding:50px;
+text-align:center;
+}
+
+/* GOLD BUTTON */
+
+button{
+background:linear-gradient(135deg,#d4af37,#ffd700);
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* GLASS MENU */
+
+.menu-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.menu-card{
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+border-radius:12px;
+padding:25px;
+width:220px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.gallery img{
+width:220px;
+border-radius:10px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+/* FLOATING BUTTONS */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+.call{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#007bff;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+footer{
+background:#222;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="intro">
+<h1>ANAND CATERERS & DECORATORS</h1>
+<p>Since 2000</p>
+</div>
+
+<nav>
+
+<a href="#menu">Menu</a>
+<a href="#gallery">Gallery</a>
+<a href="#video">Video</a>
+<a href="#booking">Book</a>
+
+</nav>
+
+<div class="logo">
+
+<h1>🍽️ ANAND CATERERS & DECORATORS</h1>
+
+<p>Since 2000</p>
+
+<p style="color:green;font-weight:bold;">
+🌱 100% Pure Vegetarian Catering
+</p>
+
+</div>
+
+<section>
+
+<h2>We can conduct catering in any region</h2>
+
+</section>
+
+<section id="menu">
+
+<h2>Our Veg Special Menu</h2>
+
+<div class="menu-container">
+
+<div class="menu-card">
+<h3>Paneer Butter Masala</h3>
+</div>
+
+<div class="menu-card">
+<h3>Veg Biryani</h3>
+</div>
+
+<div class="menu-card">
+<h3>Masala Dosa</h3>
+</div>
+
+<div class="menu-card">
+<h3>Dal Makhani</h3>
+</div>
+
+<div class="menu-card">
+<h3>Chole Bhature</h3>
+</div>
+
+<div class="menu-card">
+<h3>Traditional Veg Thali</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Pure Vegetarian Food Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950">
+
+</div>
+
+</section>
+
+<section id="video">
+
+<h2>Our Catering Event</h2>
+
+<iframe width="320" height="180"
+src="https://www.youtube.com/embed/NQLch7lMBI4"
+allowfullscreen></iframe>
+
+</section>
+
+<section>
+
+<h2>Estimate Catering Cost</h2>
+
+<input id="guests" type="number" placeholder="Number of Guests">
+
+<select id="price">
+
+<option value="399">Silver Package</option>
+<option value="599">Gold Package</option>
+<option value="899">Royal Package</option>
+
+</select>
+
+<button onclick="calc()">Calculate</button>
+
+<p id="total"></p>
+
+</section>
+
+<section id="booking">
+
+<h2>Book Catering</h2>
+
+<button onclick="send()">Book on WhatsApp</button>
+
+</section>
+
+<section>
+
+<p style="font-size:22px;color:#b22222;font-style:italic;">
+
+Planning an event? Feel free to talk to us at 📞 9818396017
+
+</p>
+
+</section>
+
+<section>
+
+<iframe
+width="90%"
+height="300"
+src="https://maps.google.com/maps?q=mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/919818396017">💬</a>
+
+<a class="call" href="tel:9818396017">📞</a>
+
+<footer>
+
+© 2026 ANAND CATERERS & DECORATORS
+
+</footer>
+
+<script>
+
+function calc(){
+
+let g=document.getElementById("guests").value;
+
+let p=document.getElementById("price").value;
+
+let t=g*p;
+
+document.getElementById("total").innerText="Estimated Cost: ₹"+t;
+
+}
+
+function send(){
+
+let guests=document.getElementById("guests").value;
+
+let msg="Hello, I need vegetarian catering for "+guests+" guests.";
+
+window.open("https://wa.me/919818396017?text="+encodeURIComponent(msg));
+
+}
+
+</script>
+
+</body>
+</html>
